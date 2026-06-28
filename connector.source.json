@@ -1,0 +1,77 @@
+{
+  "schemaVersion": 1,
+  "extensionId": "irodori.mongodb",
+  "visibility": "public",
+  "version": "0.1.0",
+  "connector": {
+    "id": "mongodb.connector",
+    "engine": "mongodb",
+    "label": "MongoDB",
+    "aliases": [
+      "mongodb",
+      "MongoDB"
+    ],
+    "defaultPort": 27017,
+    "wire": "mongodb",
+    "module": "mongodb.driver",
+    "features": [
+      "metadata",
+      "streaming"
+    ]
+  },
+  "connection": {
+    "endpoint": {
+      "modes": [
+        "hostPort",
+        "connectionString"
+      ],
+      "defaultPort": 27017,
+      "fields": [
+        {
+          "id": "host",
+          "label": "Host",
+          "type": "string",
+          "profileField": "host",
+          "required": true
+        },
+        {
+          "id": "port",
+          "label": "Port",
+          "type": "number",
+          "profileField": "port",
+          "default": 27017
+        },
+        {
+          "id": "database",
+          "label": "Database or bucket",
+          "type": "string",
+          "profileField": "database"
+        }
+      ]
+    },
+    "authMethods": [
+      "none",
+      "connectionString",
+      "scram",
+      "mongodbX509",
+      "awsIam",
+      "kerberos",
+      "ldap",
+      "oidc:workloadIdentity",
+      "customDriverOptions"
+    ],
+    "tls": "optional",
+    "transports": "default",
+    "optionNamespaces": [
+      "mongodb"
+    ],
+    "customDriverOptions": true
+  },
+  "runtime": {
+    "driverLinked": false
+  },
+  "source": {
+    "knowledgeEngineStatus": "verified",
+    "adapter": "db/mongo.rs"
+  }
+}
