@@ -35,7 +35,342 @@
         "features": [
           "metadata",
           "streaming"
-        ]
+        ],
+        "connection": {
+          "schemaVersion": 1,
+          "endpoint": {
+            "modes": [
+              "hostPort",
+              "connectionString"
+            ],
+            "defaultPort": 27017,
+            "fields": [
+              {
+                "id": "host",
+                "label": "Host",
+                "type": "string",
+                "profileField": "host",
+                "required": true
+              },
+              {
+                "id": "port",
+                "label": "Port",
+                "type": "number",
+                "profileField": "port",
+                "default": 27017
+              },
+              {
+                "id": "database",
+                "label": "Database or bucket",
+                "type": "string",
+                "profileField": "database"
+              }
+            ]
+          },
+          "profileFields": [
+            {
+              "id": "id",
+              "label": "Connection ID",
+              "type": "string",
+              "profileField": "id",
+              "required": true
+            },
+            {
+              "id": "url",
+              "label": "Connection URL or DSN",
+              "type": "uri",
+              "profileField": "url"
+            },
+            {
+              "id": "user",
+              "label": "User",
+              "type": "string",
+              "profileField": "user"
+            },
+            {
+              "id": "host",
+              "label": "Host",
+              "type": "string",
+              "profileField": "host",
+              "required": true
+            },
+            {
+              "id": "port",
+              "label": "Port",
+              "type": "number",
+              "profileField": "port",
+              "default": 27017
+            },
+            {
+              "id": "database",
+              "label": "Database or bucket",
+              "type": "string",
+              "profileField": "database"
+            },
+            {
+              "id": "readOnly",
+              "label": "Read-only connection",
+              "type": "boolean",
+              "profileField": "readOnly",
+              "default": false
+            },
+            {
+              "id": "options",
+              "label": "Driver options",
+              "type": "map",
+              "profileField": "options"
+            }
+          ],
+          "authMethods": [
+            {
+              "id": "none",
+              "label": "No authentication",
+              "kind": "none",
+              "secretPurposes": [],
+              "fields": []
+            },
+            {
+              "id": "connectionString",
+              "label": "Connection string / DSN",
+              "kind": "connectionString",
+              "secretPurposes": [],
+              "fields": [
+                {
+                  "id": "url",
+                  "label": "Connection URL or DSN",
+                  "type": "uri",
+                  "profileField": "url",
+                  "required": true
+                }
+              ]
+            },
+            {
+              "id": "scram",
+              "label": "SCRAM user/password",
+              "kind": "userPassword",
+              "secretPurposes": [
+                "password"
+              ],
+              "fields": [
+                {
+                  "id": "user",
+                  "label": "User",
+                  "type": "string",
+                  "profileField": "user"
+                },
+                {
+                  "id": "password",
+                  "label": "Password",
+                  "type": "secret",
+                  "secretPurpose": "password",
+                  "profileField": "password"
+                }
+              ]
+            },
+            {
+              "id": "mongodbX509",
+              "label": "X.509 client certificate",
+              "kind": "certificate",
+              "secretPurposes": [
+                "privateKey",
+                "privateKeyPassphrase"
+              ],
+              "fields": [
+                {
+                  "id": "clientCertificate",
+                  "label": "Client certificate",
+                  "type": "pem"
+                },
+                {
+                  "id": "clientPrivateKey",
+                  "label": "Client private key",
+                  "type": "pem",
+                  "secretPurpose": "privateKey"
+                },
+                {
+                  "id": "clientPrivateKeyPassphrase",
+                  "label": "Private key passphrase",
+                  "type": "secret",
+                  "secretPurpose": "privateKeyPassphrase"
+                }
+              ]
+            },
+            {
+              "id": "awsIam",
+              "label": "AWS IAM",
+              "kind": "iam",
+              "secretPurposes": [
+                "token"
+              ],
+              "fields": [
+                {
+                  "id": "accessKeyId",
+                  "label": "Access key ID",
+                  "type": "string"
+                },
+                {
+                  "id": "secretAccessKey",
+                  "label": "Secret access key",
+                  "type": "secret",
+                  "secretPurpose": "token"
+                },
+                {
+                  "id": "sessionToken",
+                  "label": "Session token",
+                  "type": "secret",
+                  "secretPurpose": "token"
+                }
+              ]
+            },
+            {
+              "id": "kerberos",
+              "label": "Kerberos / GSSAPI",
+              "kind": "kerberos",
+              "secretPurposes": [
+                "token"
+              ],
+              "fields": [
+                {
+                  "id": "principal",
+                  "label": "Principal",
+                  "type": "string"
+                },
+                {
+                  "id": "keytab",
+                  "label": "Keytab",
+                  "type": "path",
+                  "secretPurpose": "privateKey"
+                }
+              ]
+            },
+            {
+              "id": "ldap",
+              "label": "LDAP user/password",
+              "kind": "userPassword",
+              "secretPurposes": [
+                "password"
+              ],
+              "fields": [
+                {
+                  "id": "user",
+                  "label": "User",
+                  "type": "string",
+                  "profileField": "user"
+                },
+                {
+                  "id": "password",
+                  "label": "Password",
+                  "type": "secret",
+                  "secretPurpose": "password",
+                  "profileField": "password"
+                }
+              ]
+            },
+            {
+              "id": "oidc",
+              "label": "OIDC / workload identity",
+              "kind": "oauth2",
+              "secretPurposes": [
+                "token"
+              ],
+              "fields": [
+                {
+                  "id": "accessToken",
+                  "label": "Access token",
+                  "type": "secret",
+                  "secretPurpose": "token"
+                },
+                {
+                  "id": "refreshToken",
+                  "label": "Refresh token",
+                  "type": "secret",
+                  "secretPurpose": "token"
+                },
+                {
+                  "id": "clientId",
+                  "label": "Client ID",
+                  "type": "string"
+                },
+                {
+                  "id": "clientSecret",
+                  "label": "Client secret",
+                  "type": "secret",
+                  "secretPurpose": "token"
+                }
+              ]
+            },
+            {
+              "id": "customDriverOptions",
+              "label": "Custom driver options",
+              "kind": "custom",
+              "secretPurposes": [
+                "password",
+                "token",
+                "privateKey",
+                "privateKeyPassphrase"
+              ],
+              "fields": [
+                {
+                  "id": "options",
+                  "label": "Driver options",
+                  "type": "map",
+                  "profileField": "options"
+                }
+              ]
+            }
+          ],
+          "secretPurposes": [
+            "password",
+            "privateKey",
+            "privateKeyPassphrase",
+            "token"
+          ],
+          "tls": {
+            "supported": true,
+            "requiredByDefault": false,
+            "modes": [
+              "disable",
+              "prefer",
+              "require",
+              "verifyCa",
+              "verifyFull",
+              "clientCertificate"
+            ],
+            "fields": [
+              {
+                "id": "caCertificate",
+                "label": "CA certificate",
+                "type": "pem"
+              },
+              {
+                "id": "clientCertificate",
+                "label": "Client certificate",
+                "type": "pem"
+              },
+              {
+                "id": "clientPrivateKey",
+                "label": "Client private key",
+                "type": "pem",
+                "secretPurpose": "privateKey"
+              }
+            ]
+          },
+          "transports": [
+            "direct",
+            "sshTunnel",
+            "socks5Proxy",
+            "httpConnectProxy",
+            "proxyChain"
+          ],
+          "optionNamespaces": [
+            "profile.options",
+            "driver",
+            "tls",
+            "network",
+            "mongodb"
+          ],
+          "customDriverOptions": true
+        }
       }
     ]
   },
