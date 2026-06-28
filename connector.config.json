@@ -1,0 +1,59 @@
+{
+  "schemaVersion": 1,
+  "visibility": "public",
+  "extensionId": "irodori.mongodb",
+  "connector": {
+    "id": "mongodb.connector",
+    "engine": "mongodb",
+    "label": "MongoDB",
+    "aliases": [
+      "mongodb",
+      "MongoDB"
+    ],
+    "defaultPort": 27017,
+    "wire": "mongodb",
+    "module": "mongodb.driver",
+    "features": [
+      "metadata",
+      "streaming"
+    ]
+  },
+  "runtime": {
+    "abi": "irodori.connector.native.v1",
+    "module": {
+      "id": "mongodb.driver",
+      "path": "dist/native",
+      "platforms": [
+        "windowsX64",
+        "windowsArm64",
+        "macosX64",
+        "macosArm64",
+        "linuxX64",
+        "linuxArm64"
+      ]
+    },
+    "crate": "irodori_extension_mongodb",
+    "entrypoints": [
+      "irodori_extension_abi_version",
+      "irodori_connector_engine_json",
+      "irodori_extension_manifest_json",
+      "irodori_connector_config_json",
+      "irodori_connector_call_json",
+      "irodori_connector_free_buffer"
+    ],
+    "supportedCalls": [
+      "health",
+      "describe",
+      "manifest",
+      "config"
+    ],
+    "driverLinked": false
+  },
+  "source": {
+    "marketplaceId": "irodori.mongodb",
+    "repository": "https://github.com/hjosugi/irodori-extension-mongodb",
+    "knowledgeEngineStatus": "verified",
+    "adapter": "db/mongo.rs",
+    "adapterSha256": "7dd5843e37ef37c30d857aceebc37c86f90d0c1d38abac2174f68db25157c2b2"
+  }
+}
