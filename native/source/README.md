@@ -15,7 +15,7 @@ should move here as the connector runtime contract is wired into the desktop app
 |---|---|---|---|
 | `desktop-db-adapter` | `apps/desktop/src-tauri/src/db/mongo.rs` | `native/source/irodori-table/apps/desktop/src-tauri/src/db/mongo.rs` | `7dd5843e37ef37c30d857aceebc37c86f90d0c1d38abac2174f68db25157c2b2` |
 | `desktop-db-contract` | `apps/desktop/src-tauri/src/db/connection.rs` | `native/source/irodori-table/apps/desktop/src-tauri/src/db/connection.rs` | `54051346e0402f182d87e2f0e7692d8fc50a8cedd7e1ba4b02b2abfa1f514a47` |
-| `desktop-db-contract` | `apps/desktop/src-tauri/src/db/profile.rs` | `native/source/irodori-table/apps/desktop/src-tauri/src/db/profile.rs` | `cd29058f740ae378868eda3bc3e7eaee08f3a285b77a9603c5b5d703ea933bb3` |
+| `desktop-db-contract` | `apps/desktop/src-tauri/src/db/profile.rs` | `native/source/irodori-table/apps/desktop/src-tauri/src/db/profile.rs` | `6ea079bd8fd74f687e0a549cbc3b3e97009fa5f529839831a79b8e4d69999446` |
 | `desktop-db-contract` | `apps/desktop/src-tauri/src/db/transport.rs` | `native/source/irodori-table/apps/desktop/src-tauri/src/db/transport.rs` | `bcc16c52a19739b0706fd83143ae089ae91310af963885c1c75b5ba955e85add` |
 | `desktop-db-contract` | `apps/desktop/src-tauri/src/db/query.rs` | `native/source/irodori-table/apps/desktop/src-tauri/src/db/query.rs` | `ca2605bf1645da61edf8195408717c682593fd552faf4e246a44a53f2bde665e` |
 | `desktop-db-contract` | `apps/desktop/src-tauri/src/db/meta.rs` | `native/source/irodori-table/apps/desktop/src-tauri/src/db/meta.rs` | `de99fe0155f450c0fd9a439bee52cd7f66b7bc5174db500e00c8293360706be7` |

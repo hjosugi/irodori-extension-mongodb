@@ -19,6 +19,23 @@
     ],
     "connection": {
       "schemaVersion": 1,
+      "inferEnvironmentFrom": [
+        "name",
+        "id",
+        "host",
+        "database",
+        "url"
+      ],
+      "compatibility": {
+        "addsRequiredProfileFields": false,
+        "acceptsExistingProfiles": true
+      },
+      "defaults": {
+        "engine": "mongodb",
+        "wire": "mongodb",
+        "port": 27017,
+        "readOnly": false
+      },
       "endpoint": {
         "modes": [
           "hostPort",
@@ -407,7 +424,7 @@
         "kind": "desktop-db-contract",
         "path": "apps/desktop/src-tauri/src/db/profile.rs",
         "destination": "native/source/irodori-table/apps/desktop/src-tauri/src/db/profile.rs",
-        "sha256": "cd29058f740ae378868eda3bc3e7eaee08f3a285b77a9603c5b5d703ea933bb3"
+        "sha256": "6ea079bd8fd74f687e0a549cbc3b3e97009fa5f529839831a79b8e4d69999446"
       },
       {
         "kind": "desktop-db-contract",
@@ -479,6 +496,23 @@
   },
   "connection": {
     "schemaVersion": 1,
+    "inferEnvironmentFrom": [
+      "name",
+      "id",
+      "host",
+      "database",
+      "url"
+    ],
+    "compatibility": {
+      "addsRequiredProfileFields": false,
+      "acceptsExistingProfiles": true
+    },
+    "defaults": {
+      "engine": "mongodb",
+      "wire": "mongodb",
+      "port": 27017,
+      "readOnly": false
+    },
     "endpoint": {
       "modes": [
         "hostPort",
