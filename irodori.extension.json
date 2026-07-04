@@ -3,7 +3,7 @@
   "manifestVersion": 1,
   "id": "irodori.mongodb",
   "name": "MongoDB Connector",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "publisher": "irodori",
   "description": "MongoDB Connector contributes the MongoDB database connector through the native connector ABI.",
   "license": "MIT OR 0BSD",
