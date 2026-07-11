@@ -1,22 +1,17 @@
 <!-- i18n: language-switcher -->
 [English](README.md) | [日本語](README.ja.md)
 
-# Native Source
+# ネイティブソース
 
-The initial source snapshot was copied from `db/mongo.rs` in the desktop app.
+初期のソーススナップショットは、デスクトップアプリの `db/mongo.rs` からコピーされました。
 
-Source SHA-256: `7dd5843e37ef37c30d857aceebc37c86f90d0c1d38abac2174f68db25157c2b2`.
+ソースSHA-256: `7dd5843e37ef37c30d857aceebc37c86f90d0c1d38abac2174f68db25157c2b2`。
 
+このディレクトリは `irodori.mongodb` のマイグレーションステージングエリアです。アクティブなネイティブのエントリポイントは `src/lib.rs` にあり、共有ABIヘルパーは `src/abi.rs` に、エンジンの動作は `src/stub.rs` または `src/driver.rs` にあります。エンジン固有の接続／クエリ／メタデータコードは、コネクターのランタイム契約がデスクトップアプリに組み込まれるにつれて、これらのスナップショットから該当の動作モジュールへ移動すべきです。
 
-This directory is a migration staging area for `irodori.mongodb`. The active native
-entrypoints live in `src/lib.rs`, shared ABI helpers live in `src/abi.rs`, and
-engine behavior lives in `src/stub.rs` or `src/driver.rs`. Engine-specific
-connect/query/metadata code should move from these snapshots into that behavior
-module as the connector runtime contract is wired into the desktop app.
+## マイグレーションスナップショット
 
-## Migration Snapshots
-
-| Kind | Source | Destination | SHA-256 |
+| 種類 | ソース | 目的地 | SHA-256 |
 |---|---|---|---|
 | `desktop-db-adapter` | `apps/desktop/src-tauri/src/db/mongo.rs` | `native/source/irodori-table/apps/desktop/src-tauri/src/db/mongo.rs` | `7dd5843e37ef37c30d857aceebc37c86f90d0c1d38abac2174f68db25157c2b2` |
 | `desktop-db-contract` | `apps/desktop/src-tauri/src/db/connection.rs` | `native/source/irodori-table/apps/desktop/src-tauri/src/db/connection.rs` | `54051346e0402f182d87e2f0e7692d8fc50a8cedd7e1ba4b02b2abfa1f514a47` |
@@ -33,4 +28,4 @@ module as the connector runtime contract is wired into the desktop app.
 | `transport-runtime` | `../irodori-kit/irodori-proxy/src/plan.rs` | `native/source/irodori-table/../irodori-kit/irodori-proxy/src/plan.rs` | `b6e3be9778fd9b543d905dec39c0ddf579e739313e0bf24881f6152b6da94a39` |
 | `transport-runtime` | `../irodori-kit/irodori-proxy/src/resolved.rs` | `native/source/irodori-table/../irodori-kit/irodori-proxy/src/resolved.rs` | `4b1ba3f95e49fd582dd82de39452d03a597abe36a8738772e6f4bdbab753772d` |
 
-Engine status from `knowledge/engines.json`: `verified`.
+`knowledge/engines.json` からのエンジンステータス: `verified`。

@@ -1,3 +1,6 @@
+<!-- i18n: language-switcher -->
+[English](README.md) | [日本語](README.ja.md)
+
 # MongoDB Connector
 
 Native Irodori Table connector extension for MongoDB.
